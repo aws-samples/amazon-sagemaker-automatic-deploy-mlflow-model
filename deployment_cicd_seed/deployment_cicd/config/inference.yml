@@ -1,0 +1,5 @@
+Staging:
+  InstanceCount: 1
+  InstanceType: ml.m5.large
+Production:
+  ServerlessMaxConcurrency: 2

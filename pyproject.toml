@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "sagemaker-mlflow-mlops"
+version = "0.1.0"
+description = ""
+authors = [""]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.12"
+aws-cdk-lib = "^2.20.0"
+constructs = "^10.0.115"
+"aws-cdk.aws-lambda-python-alpha" = "^2.20.0-alpha.0"
+cdk-ecr-deployment = "^2.5.5"
+mlflow-skinny = "^1.28.0"
+
+[tool.poetry.dev-dependencies]
+black = "^22.3.0"
+ipykernel = "^6.13.0"
+aws-lambda-powertools = "^1.25.7"
+boto3-stubs = {extras = ["essential", "sagemaker", "secretsmanager", "stepfunctions"], version = "^1.24.46"}
+python-dotenv = "^0.20.0"
+jsonpickle = "^2.2.0"
+sagemaker = "^2.103.0"
+databricks-registry-webhooks = "^0.1.1"
+cfn-response = "^0.0.4"
+crhelper = "^2.0.11"
+scikit-learn = "0.24.1"
+xgboost = "1.5"
+sagemaker-inference = "1.5.5"
+mlflow-skinny = "^1.28.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
