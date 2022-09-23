@@ -9,7 +9,7 @@ python = "^3.9"
 databricks-registry-webhooks = "^0.1.1"
 crhelper = "^2.0.11"
 jsonpickle = "^2.2.0"
-protobuf = "^3.20.1"
+protobuf = "^3.20.2"
 
 [tool.poetry.dev-dependencies]
 
