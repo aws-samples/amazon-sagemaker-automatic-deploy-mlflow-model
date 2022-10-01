@@ -35,20 +35,6 @@ tests = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy", "pympl
 tests_no_zope = ["cloudpickle", "coverage[toml] (>=5.0.2)", "hypothesis", "mypy", "pympler", "pytest (>=4.3.0)", "pytest-mypy-plugins", "six"]
 
 [[package]]
-name = "aws-cdk-lib"
-version = "2.39.1"
-description = "Version 2 of the AWS Cloud Development Kit library"
-category = "main"
-optional = false
-python-versions = "~=3.7"
-
-[package.dependencies]
-constructs = ">=10.0.0,<11.0.0"
-jsii = ">=1.65.1,<2.0.0"
-publication = ">=0.0.3"
-typeguard = ">=2.13.3,<2.14.0"
-
-[[package]]
 name = "aws-cdk.aws-lambda-python-alpha"
 version = "2.39.1a0"
 description = "The CDK Construct Library for AWS Lambda in Python"
@@ -58,6 +44,20 @@ python-versions = "~=3.7"
 
 [package.dependencies]
 aws-cdk-lib = ">=2.39.1,<3.0.0"
+constructs = ">=10.0.0,<11.0.0"
+jsii = ">=1.65.1,<2.0.0"
+publication = ">=0.0.3"
+typeguard = ">=2.13.3,<2.14.0"
+
+[[package]]
+name = "aws-cdk-lib"
+version = "2.39.1"
+description = "Version 2 of the AWS Cloud Development Kit library"
+category = "main"
+optional = false
+python-versions = "~=3.7"
+
+[package.dependencies]
 constructs = ">=10.0.0,<11.0.0"
 jsii = ">=1.65.1,<2.0.0"
 publication = ">=0.0.3"
@@ -811,6 +811,7 @@ pexpect = {version = ">4.3", markers = "sys_platform != \"win32\""}
 pickleshare = "*"
 prompt-toolkit = ">=2.0.0,<3.0.0 || >3.0.0,<3.0.1 || >3.0.1,<3.1.0"
 pygments = ">=2.4.0"
+setuptools = ">=18.5"
 stack-data = "*"
 traitlets = ">=5"
 
@@ -852,11 +853,11 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "joblib"
-version = "1.1.0"
+version = "1.2.0"
 description = "Lightweight pipelining with Python functions"
 category = "dev"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [[package]]
 name = "jsii"
@@ -1538,6 +1539,19 @@ python-versions = ">=3.8,<3.12"
 numpy = ">=1.18.5,<1.25.0"
 
 [[package]]
+name = "setuptools"
+version = "65.4.1"
+description = "Easily download, build, install, upgrade, and uninstall Python packages"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+docs = ["furo", "jaraco.packaging (>=9)", "jaraco.tidelift (>=1.4)", "pygments-github-lexers (==0.0.5)", "rst.linker (>=1.9)", "sphinx (>=3.5)", "sphinx-favicon", "sphinx-hoverxref (<2)", "sphinx-inline-tabs", "sphinx-notfound-page (==0.8.3)", "sphinx-reredirects", "sphinxcontrib-towncrier"]
+testing = ["build[virtualenv]", "filelock (>=3.4.0)", "flake8 (<5)", "flake8-2020", "ini2toml[lite] (>=0.9)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "mock", "pip (>=19.1)", "pip-run (>=8.8)", "pytest (>=6)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=1.3)", "pytest-flake8", "pytest-mypy (>=0.9.1)", "pytest-perf", "pytest-xdist", "tomli-w (>=1.0.0)", "virtualenv (>=13.0.0)", "wheel"]
+testing-integration = ["build[virtualenv]", "filelock (>=3.4.0)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "pytest", "pytest-enabler", "pytest-xdist", "tomli", "virtualenv (>=13.0.0)", "wheel"]
+
+[[package]]
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -1745,13 +1759,13 @@ attrs = [
     {file = "attrs-21.4.0-py2.py3-none-any.whl", hash = "sha256:2d27e3784d7a565d36ab851fe94887c5eccd6a463168875832a1be79c82828b4"},
     {file = "attrs-21.4.0.tar.gz", hash = "sha256:626ba8234211db98e869df76230a137c4c40a12d72445c45d5f5b716f076e2fd"},
 ]
-aws-cdk-lib = [
-    {file = "aws-cdk-lib-2.39.1.tar.gz", hash = "sha256:41a97713b52cc558a53269f97665dea263ee635159455b29c2ca64a8f4772bc6"},
-    {file = "aws_cdk_lib-2.39.1-py3-none-any.whl", hash = "sha256:c22cafee652238dcc7dfab14849f45783503a27d76f9f7fcb51232d017e8576a"},
-]
 "aws-cdk.aws-lambda-python-alpha" = [
     {file = "aws-cdk.aws-lambda-python-alpha-2.39.1a0.tar.gz", hash = "sha256:f0b003f67c821f9bc3fa66573af9deca479ae1f06361595a3c99924a6eb34b4f"},
     {file = "aws_cdk.aws_lambda_python_alpha-2.39.1a0-py3-none-any.whl", hash = "sha256:4e54dc2bd8e90a4a6c451e8a506b2ed623359459fc1d94801374182a161ced4f"},
+]
+aws-cdk-lib = [
+    {file = "aws-cdk-lib-2.39.1.tar.gz", hash = "sha256:41a97713b52cc558a53269f97665dea263ee635159455b29c2ca64a8f4772bc6"},
+    {file = "aws_cdk_lib-2.39.1-py3-none-any.whl", hash = "sha256:c22cafee652238dcc7dfab14849f45783503a27d76f9f7fcb51232d017e8576a"},
 ]
 aws-lambda-powertools = [
     {file = "aws_lambda_powertools-1.28.0-py3-none-any.whl", hash = "sha256:14858dae55a96f82f9131000b6203ddfa7973503bb29329ab1250b4ed70cf595"},
@@ -2001,8 +2015,8 @@ jmespath = [
     {file = "jmespath-1.0.1.tar.gz", hash = "sha256:90261b206d6defd58fdd5e85f478bf633a2901798906be2ad389150c5c60edbe"},
 ]
 joblib = [
-    {file = "joblib-1.1.0-py2.py3-none-any.whl", hash = "sha256:f21f109b3c7ff9d95f8387f752d0d9c34a02aa2f7060c2135f465da0e5160ff6"},
-    {file = "joblib-1.1.0.tar.gz", hash = "sha256:4158fcecd13733f8be669be0683b96ebdbbd38d23559f54dca7205aea1bf1e35"},
+    {file = "joblib-1.2.0-py3-none-any.whl", hash = "sha256:091138ed78f800342968c523bdde947e7a305b8594b910a0fea2ab83c3c6d385"},
+    {file = "joblib-1.2.0.tar.gz", hash = "sha256:e1cee4a79e4af22881164f218d4311f60074197fb707e082e803b61f6d137018"},
 ]
 jsii = [
     {file = "jsii-1.66.0-py3-none-any.whl", hash = "sha256:3c776c3fc32ed1e28fc95625617f106ca28e9e87b0b47d4d0bb66b78b873cafe"},
@@ -2328,6 +2342,13 @@ pyyaml = [
     {file = "PyYAML-6.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:f84fbc98b019fef2ee9a1cb3ce93e3187a6df0b2538a651bfb890254ba9f90b5"},
     {file = "PyYAML-6.0-cp310-cp310-win32.whl", hash = "sha256:2cd5df3de48857ed0544b34e2d40e9fac445930039f3cfe4bcc592a1f836d513"},
     {file = "PyYAML-6.0-cp310-cp310-win_amd64.whl", hash = "sha256:daf496c58a8c52083df09b80c860005194014c3698698d1a57cbcfa182142a3a"},
+    {file = "PyYAML-6.0-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:d4b0ba9512519522b118090257be113b9468d804b19d63c71dbcf4a48fa32358"},
+    {file = "PyYAML-6.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:81957921f441d50af23654aa6c5e5eaf9b06aba7f0a19c18a538dc7ef291c5a1"},
+    {file = "PyYAML-6.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:afa17f5bc4d1b10afd4466fd3a44dc0e245382deca5b3c353d8b757f9e3ecb8d"},
+    {file = "PyYAML-6.0-cp311-cp311-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:dbad0e9d368bb989f4515da330b88a057617d16b6a8245084f1b05400f24609f"},
+    {file = "PyYAML-6.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:432557aa2c09802be39460360ddffd48156e30721f5e8d917f01d31694216782"},
+    {file = "PyYAML-6.0-cp311-cp311-win32.whl", hash = "sha256:bfaef573a63ba8923503d27530362590ff4f576c626d86a9fed95822a8255fd7"},
+    {file = "PyYAML-6.0-cp311-cp311-win_amd64.whl", hash = "sha256:01b45c0191e6d66c470b6cf1b9531a771a83c1c4208272ead47a3ae4f2f603bf"},
     {file = "PyYAML-6.0-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:897b80890765f037df3403d22bab41627ca8811ae55e9a722fd0392850ec4d86"},
     {file = "PyYAML-6.0-cp36-cp36m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:50602afada6d6cbfad699b0c7bb50d5ccffa7e46a3d738092afddc1f9758427f"},
     {file = "PyYAML-6.0-cp36-cp36m-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:48c346915c114f5fdb3ead70312bd042a953a8ce5c7106d5bfb1a5254e47da92"},
@@ -2394,6 +2415,7 @@ pyzmq = [
     {file = "pyzmq-23.2.1-cp37-cp37m-musllinux_1_1_x86_64.whl", hash = "sha256:48400b96788cdaca647021bf19a9cd668384f46e4d9c55cf045bdd17f65299c8"},
     {file = "pyzmq-23.2.1-cp37-cp37m-win32.whl", hash = "sha256:8a68f57b7a3f7b6b52ada79876be1efb97c8c0952423436e84d70cc139f16f0d"},
     {file = "pyzmq-23.2.1-cp37-cp37m-win_amd64.whl", hash = "sha256:9e5bf6e7239fc9687239de7a283aa8b801ab85371116045b33ae20132a1325d6"},
+    {file = "pyzmq-23.2.1-cp38-cp38-macosx_10_15_universal2.whl", hash = "sha256:0ff6294e001129a9f22dcbfba186165c7e6f573c46de2704d76f873c94c65416"},
     {file = "pyzmq-23.2.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:ffc6b1623d0f9affb351db4ca61f432dca3628a5ee015f9bf2bfbe9c6836881c"},
     {file = "pyzmq-23.2.1-cp38-cp38-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:4d6f110c56f7d5b4d64dde3a382ae61b6d48174e30742859d8e971b18b6c9e5c"},
     {file = "pyzmq-23.2.1-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:9269fbfe3a4eb2009199120861c4571ef1655fdf6951c3e7f233567c94e8c602"},
@@ -2507,6 +2529,10 @@ scipy = [
     {file = "scipy-1.9.1-cp39-cp39-win_amd64.whl", hash = "sha256:90c805f30c46cf60f1e76e947574f02954d25e3bb1e97aa8a07bc53aa31cf7d1"},
     {file = "scipy-1.9.1.tar.gz", hash = "sha256:26d28c468900e6d5fdb37d2812ab46db0ccd22c63baa095057871faa3a498bc9"},
 ]
+setuptools = [
+    {file = "setuptools-65.4.1-py3-none-any.whl", hash = "sha256:1b6bdc6161661409c5f21508763dc63ab20a9ac2f8ba20029aaaa7fdb9118012"},
+    {file = "setuptools-65.4.1.tar.gz", hash = "sha256:3050e338e5871e70c72983072fe34f6032ae1cdeeeb67338199c2f74e083a80e"},
+]
 six = [
     {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
     {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
@@ -2529,7 +2555,6 @@ stack-data = [
 ]
 tabulate = [
     {file = "tabulate-0.8.10-py3-none-any.whl", hash = "sha256:0ba055423dbaa164b9e456abe7920c5e8ed33fcc16f6d1b2f2d152c8e1e8b4fc"},
-    {file = "tabulate-0.8.10-py3.8.egg", hash = "sha256:436f1c768b424654fce8597290d2764def1eea6a77cfa5c33be00b1bc0f4f63d"},
     {file = "tabulate-0.8.10.tar.gz", hash = "sha256:6c57f3f3dd7ac2782770155f3adb2db0b1a269637e42f27599925e64b114f519"},
 ]
 threadpoolctl = [
