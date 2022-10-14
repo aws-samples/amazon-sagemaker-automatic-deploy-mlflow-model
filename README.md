@@ -46,8 +46,8 @@ The project uses [CDK pipelines](https://docs.aws.amazon.com/cdk/v2/guide/cdk_pi
    - For example
 ```
    { 
-      "DATABRICKS_HOST" : "https://\<instance-name\>.cloud.databricks.com", 
-      "DATABRICKS_TOKEN” : "\<password-or-token\>”
+      "DATABRICKS_HOST" : "https://<instance-name>.cloud.databricks.com", 
+      "DATABRICKS_TOKEN” : "<password-or-token>”
    }
 ```
 - Create a CodeCommit repository in the same region where the stack is to be deployed
