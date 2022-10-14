@@ -43,8 +43,16 @@ The project uses [CDK pipelines](https://docs.aws.amazon.com/cdk/v2/guide/cdk_pi
 ### 2.1. Prerequisites
 
 - Store the credentials for programmatic access to mlflow model registry, either as a User name/password or as application token, into AWS Secrets Manager in the same region where the stack is to be deployed
+   - For example
+
+   { 
+      "DATABRICKS_HOST" : "https://\<instance-name\>.cloud.databricks.com", 
+      "DATABRICKS_TOKEN” : "\<password-or-token\>”
+   }
+
 - Create a CodeCommit repository in the same region where the stack is to be deployed
-- [Optional] An [Amazon SageMaker Studio domain](https://docs.aws.amazon.com/sagemaker/latest/dg/gs-studio-onboard.html) in the same region where the stack is to be deployed. Studio offers a convenient environment visualize model in SageMaker model registry and the associated endpoints.
+- An [Amazon SageMaker Studio domain](https://docs.aws.amazon.com/sagemaker/latest/dg/gs-studio-onboard.html) in the same region where the stack is to be deployed. Studio offers a convenient environment visualize model in SageMaker model registry and the associated endpoints.
+   - Note: Technically an active domain is not necessary as long as one has been created previously. The project uses roles that are created with your first domain
 
 ### 2.2. Create the Service Catalog product and the Registry Sync Application
 
