@@ -37,6 +37,31 @@ class SageMakerSCRoles(Construct):
             role_arn=format_role(role_name="AmazonSageMakerServiceCatalogProductsLambdaRole")
         )
 
+        self.api_gw_role = iam.Role.from_role_arn(
+            self,
+            "SMApiGatewayRole",
+            role_arn=format_role(role_name="AmazonSageMakerServiceCatalogProductsApiGatewayRole")
+        )
+
+        self.firehose_role = iam.Role.from_role_arn(
+            self,
+            "SMFirehoseRole",
+            role_arn=format_role(role_name="AmazonSageMakerServiceCatalogProductsFirehoseRole")
+        )
+
+        self.glue_role = iam.Role.from_role_arn(
+            self,
+            "SMGlueRole",
+            role_arn=format_role(role_name="AmazonSageMakerServiceCatalogProductsGlueRole")
+        )
+
+        self.cloudformation_role = iam.Role.from_role_arn(
+            self,
+            "SMCloudformationRole",
+            role_arn=format_role(role_name="AmazonSageMakerServiceCatalogProductsCloudformationRole")
+        )
+
+
 
 
 def format_role(role_name: str):
